@@ -1,0 +1,24 @@
+{
+  "name": "neutron-devicemanager-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "webpack --mode production && node scripts/copy-plugin-files.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@grafana/data": "11.1.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@swc/core": "1.4.2",
+    "@types/node": "^20.14.10",
+    "@types/react": "18.2.79",
+    "@types/react-dom": "18.2.25",
+    "swc-loader": "0.2.3",
+    "typescript": "4.8.4",
+    "webpack": "5.92.1",
+    "webpack-cli": "5.1.4"
+  }
+}

@@ -31,13 +31,6 @@ export function getAppRoutes(): RouteDescriptor[] {
     // In order to make it possible we need to register them first due to how `<Switch>` is evaluating routes. (This will be unnecessary once/when we upgrade to React Router v6 and start using `<Routes>` instead.)
     ...getAppPluginRoutes(),
     {
-      path: '/device-manager',
-      pageClass: 'page-device-manager',
-      component: SafeDynamicImport(
-        () => import(/* webpackChunkName: "DeviceManagerPage" */ 'app/features/device-manager/DeviceManagerPage')
-      ),
-    },
-    {
       path: '/',
       pageClass: 'page-dashboard',
       routeName: DashboardRoutes.Home,
@@ -529,6 +522,6 @@ export function getSupportBundleRoutes(cfg = config): RouteDescriptor[] {
       component: SafeDynamicImport(
         () => import(/* webpackChunkName: "SupportBundlesCreate" */ 'app/features/support-bundles/SupportBundlesCreate')
       ),
-    },
+    }
   ];
 }

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/v11.1.3/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "app",
+  "name": "Device Manager",
+  "id": "neutron-devicemanager-app",
+  "info": {
+    "keywords": ["app"],
+    "description": "Embed the Neutron Device Manager in Grafana.",
+    "author": { "name": "Neutron Automation" },
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "version": "1.0.0",
+    "updated": "2026-11-24"
+  },
+  "includes": [
+    {
+      "type": "page",
+      "name": "Device Manager",
+      "path": "/a/neutron-devicemanager-app/main",
+      "addToNav": true,
+      "defaultNav": true
+    }
+  ],
+  "dependencies": {
+    "grafanaDependency": ">=11.0.0",
+    "plugins": []
+  }
+}

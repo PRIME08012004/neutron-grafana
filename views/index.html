@@ -244,18 +244,6 @@
         nav[nav.length - 1].subTitle = 'Neutron 11.4';
       }
 
-      // Add Device Manager to Grafana's sidebar; its internal route renders the app inline.
-      var deviceManagerItem = {
-        id: 'device-manager',
-        text: 'Device Manager',
-        icon: 'link',
-        url: '/device-manager'
-      };
-      var starredIndex = nav.findIndex(function (item) { return item.id === 'starred'; });
-      var insertAt = starredIndex >= 0 ? starredIndex + 1 : nav.length;
-      nav.splice(insertAt, 0, deviceManagerItem);
-
-
 window.grafanaBootData = {
         user: [[.User]],
         settings: [[.Settings]],
