@@ -244,7 +244,25 @@
         nav[nav.length - 1].subTitle = 'Neutron 11.4';
       }
 
-window.grafanaBootData = {
+// Move the Device Manager plugin entry to the top level, just below Starred
+      (function () {
+        var found = null;
+        (function walk(list) {
+          for (var i = 0; i < list.length; i++) {
+            var n = list[i];
+            if (n.url && n.url.indexOf('/a/neutron-devicemanager-app') === 0) { found = n; list.splice(i, 1); return true; }
+            if (n.children && walk(n.children)) return true;
+          }
+          return false;
+        })(nav);
+        if (found) {
+          found.icon = 'link';
+          var s = nav.findIndex(function (x) { return x.id === 'starred'; });
+          nav.splice(s >= 0 ? s + 1 : nav.length, 0, found);
+        }
+      })();
+
+      window.grafanaBootData = {
         user: [[.User]],
         settings: [[.Settings]],
         navTree: nav,
